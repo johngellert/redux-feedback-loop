@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
 
 
 

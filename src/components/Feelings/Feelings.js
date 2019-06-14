@@ -12,14 +12,13 @@ class Feelings extends Component {
                         <select>
                             <option value="1">1 - I'm very stressed</option>
                             <option value="2">2 - I'm somewhat stressed</option>
-                            <option value="3">3 - I'm not neither stressed nor feeling great stress</option>
+                            <option value="3">3 - I'm neither stressed nor feeling great</option>
                             <option value="4">4 - I'm somewhat feeling great</option>
                             <option value="5">5 - I'm feeling great</option>
                         </select>
                     </label>
 
                     <br />
-                    <button className="next-button">Next</button>
                 </div>
             </>
         );

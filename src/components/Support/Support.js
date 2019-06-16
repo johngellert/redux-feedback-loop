@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class Support extends Component {
+
+    handleClickNext = () => {
+        this.props.history.push('/comments');
+    }
+
     render() {
         return (
             <>
@@ -15,6 +20,7 @@ class Support extends Component {
                         <option value="4">4 - I'm somewhat feeling supported</option>
                         <option value="5">5 - I'm feeling supported</option>
                     </select>
+                    <button onClick={this.handleClickNext} className="next-button">Next</button>
                 </label>
             </>
         );

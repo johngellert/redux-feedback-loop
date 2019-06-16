@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class Feelings extends Component {
+
+    handleClickNext = () => {
+        this.props.history.push('/understanding');
+    }
+
     render() {
         return (
             <>
@@ -15,6 +20,7 @@ class Feelings extends Component {
                         <option value="4">4 - I'm somewhat feeling great</option>
                         <option value="5">5 - I'm feeling great</option>
                     </select>
+                    <button onClick={this.handleClickNext} className="next-button">Next</button>
                 </label>
             </>
         );

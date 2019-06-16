@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class Understanding extends Component {
+
+    handleClickNext = () => {
+        this.props.history.push('/support');
+    }
+
     render() {
         return (
             <>
@@ -15,6 +20,7 @@ class Understanding extends Component {
                         <option value="4">4 - I'm somewhat feeling like I've got this</option>
                         <option value="5">5 - I'm feeling like I've got this</option>
                     </select>
+                    <button onClick={this.handleClickNext} className="next-button">Next</button>
                 </label>
             </>
         );

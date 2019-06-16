@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class Feelings extends Component {
 
-    handleClickNext = () => {
+    handleClickNext = (event) => {
         this.props.history.push('/understanding');
+        this.props.dispatch({ type: 'SET_FEELINGS', payload: event.target.value });
     }
 
     render() {
@@ -27,4 +29,4 @@ class Feelings extends Component {
     }
 }
 
-export default Feelings;
+export default connect()(Feelings);

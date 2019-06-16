@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class Support extends Component {
 
-    handleClickNext = () => {
+    handleClickNext = (event) => {
         this.props.history.push('/comments');
+        this.props.dispatch({ type: 'SET_SUPPORT', payload: event.target.value });
     }
 
     render() {
@@ -27,4 +29,4 @@ class Support extends Component {
     }
 }
 
-export default Support;
+export default connect()(Support);

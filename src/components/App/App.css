@@ -11,6 +11,20 @@
   margin: 0 auto;
 }
 
+.review {
+  border: 2px solid black;
+  height: 200px;
+  width: 800px;
+  margin: 100px auto;
+  display: inline-block;
+}
+
+.review-items {
+
+}
+
+
+
 .next-button {
   float: right;
 }

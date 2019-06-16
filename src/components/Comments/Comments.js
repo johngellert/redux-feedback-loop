@@ -4,13 +4,22 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
+    state = {
+        comments: '',
+    }
+
     handleClickNext = () => {
-        this.props.history.push('/comments');
+        // this.props.history.push('/comments');
+        this.props.dispatch({ type: 'SET_COMMENTS', payload: this.state.comments });
     }
 
     handleCommentInput = (event) => {
-        this.props.dispatch({type: "COMMENTS", payload: event.target.value })
+        this.setState({
+            comments: event.target.value,
+        })
     }
+
+    
 
     render() {
         return (

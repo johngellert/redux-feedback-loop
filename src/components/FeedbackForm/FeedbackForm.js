@@ -5,6 +5,7 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support'
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 
 class FeedbackForm extends Component {
 
@@ -16,7 +17,7 @@ class FeedbackForm extends Component {
                         <Route path="/understanding" exact component={Understanding}></Route>
                         <Route path="/support" exact component={Support}></Route>
                         <Route path="/comments" exact component={Comments}></Route>
-                        
+                        <Review />
                 </div>
             </Router>
         );

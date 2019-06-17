@@ -8,6 +8,9 @@ class Understanding extends Component {
         understanding: '',
     }
 
+    // when next is clicked, if the user did not select a value, display alert
+    // if the user selects a value, route to support and dispatch the selection to 
+    // understandingReducer
     handleClickNext = (event) => {
 
         if (this.state.understanding === '') {

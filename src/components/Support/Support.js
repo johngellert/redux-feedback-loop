@@ -8,6 +8,9 @@ class Support extends Component {
         support: '',
     }
 
+    // when next is clicked, if the user did not select a value, display alert
+    // if the user selects a value, route to comments and dispatch the selection to 
+    // supportReducer
     handleClickNext = () => {
         if (this.state.support === '') {
             alert("Please select how you're being supported!");

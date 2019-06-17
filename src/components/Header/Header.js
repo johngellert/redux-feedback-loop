@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../Header/Header.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-import Feelings from '../Feelings/Feelings';
 
 class Header extends Component {
 

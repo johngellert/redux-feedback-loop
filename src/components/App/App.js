@@ -29,7 +29,6 @@ class App extends Component {
           {JSON.stringify(this.props.reduxState.commentsReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.clickCountReducer, 2, null)}
         </pre> */}
-         <Route path="/success" exact component={Success}></Route>
       </Router>
 
     );

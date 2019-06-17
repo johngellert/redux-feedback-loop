@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
+// declare feelings component which display on the feedback form
 class Feelings extends Component {
 
+    // local state to store the feeling selection
     state = {
         feelings: '',
     }
 
+    // when next is clicked, if the user did not select a value, display alert
+    // if the user selects a value, route to feelings and dispatch the selection to 
+    // understandingReducer
     handleClickNext = () => {
         if (this.state.feelings === '') {
             alert("Please select how you are feeling!");
@@ -18,6 +22,7 @@ class Feelings extends Component {
         }
     }
 
+    // update local state feelings as the user make a selection
     handleFeelingsChange = (event) => {
         this.setState({
             feelings: event.target.value,

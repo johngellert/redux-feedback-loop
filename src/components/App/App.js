@@ -12,21 +12,15 @@ import Success from '../Success/Success';
 
 class App extends Component {
 
-  // state = {
-  //   isSubmitted: false,
-  // }
-
-  componentDidMount(){
-    
-  }
 
   render() {
     return (
       <Router>
         <div className="App">
           <Header />
-          {/* {this.state.isSubmitted ? <Success /> : <FeedbackForm />} */}
-          <FeedbackForm />
+          {this.props.reduxState.submitReducer ?
+            <Success /> :
+            <FeedbackForm />}
         </div>
         <pre>
           {JSON.stringify(this.props.reduxState.feelingsReducer, 2, null)}
@@ -35,7 +29,7 @@ class App extends Component {
           {JSON.stringify(this.props.reduxState.commentsReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.clickCountReducer, 2, null)}
         </pre>
-        <Route path="/success" exact component={Success}></Route>
+         <Route path="/success" exact component={Success}></Route>
       </Router>
 
     );

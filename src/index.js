@@ -55,6 +55,14 @@ const commentsReducer = (state = "", action) => {
     }
 }
 
+const submitReducer = (state = false, action) => {
+    switch (action.type) {
+        case 'SUBMIT':
+            return action.payload;
+        default: return state
+    }
+}
+
 const storeInstance = createStore(
     combineReducers({
         feelingsReducer,
@@ -62,6 +70,7 @@ const storeInstance = createStore(
         understandingReducer,
         commentsReducer,
         clickCountReducer,
+        submitReducer
     }),
     applyMiddleware(logger),
 )

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Support extends Component {
+class Review extends Component {
 
     handleClickSubmit = () => {
-        console.log('taco');
+        this.props.dispatch({ type: 'SUBMIT', payload: true })
     }
 
     render() {
@@ -30,4 +30,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState: reduxState,
 });
 
-export default connect(mapReduxStateToProps)(Support);
+export default connect(mapReduxStateToProps)(Review);

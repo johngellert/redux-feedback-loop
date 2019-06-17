@@ -9,14 +9,14 @@ class Support extends Component {
     }
 
     handleClickNext = () => {
-        if(this.state.support === ''){
+        if (this.state.support === '') {
             alert("Please select how you're being supported!");
         }
         else {
             this.props.history.push('/comments');
             this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support });
         }
-        
+
     }
 
     handleSupportChange = (event) => {
@@ -33,6 +33,7 @@ class Support extends Component {
                 <label>
                     <p className="select-label">Support?</p>
                     <select onChange={this.handleSupportChange}>
+                        <option value="0">Select</option>
                         <option value="1">1 - I'm feeling abandoned</option>
                         <option value="2">2 - I'm somewhat feeling abandoned</option>
                         <option value="3">3 - I'm feeling neither abandoned nor supported</option>

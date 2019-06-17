@@ -9,7 +9,7 @@ class Feelings extends Component {
     }
 
     handleClickNext = () => {
-        if(this.state.feelings === ''){
+        if (this.state.feelings === '') {
             alert("Please select how you are feeling!");
         }
         else {
@@ -32,6 +32,7 @@ class Feelings extends Component {
                 <label>
                     <p className="select-label">Feeling?</p>
                     <select className="select" onChange={this.handleFeelingsChange}>
+                        <option value="0">Select</option>
                         <option value="1">1 - I'm very stressed</option>
                         <option value="2">2 - I'm somewhat stressed</option>
                         <option value="3">3 - I'm neither stressed nor feeling great</option>
@@ -47,6 +48,6 @@ class Feelings extends Component {
 
 const mapReduxStateToProps = (reduxState) => ({
     feelingsReducer: reduxState.feelingsReducer,
-  })
+})
 
 export default connect(mapReduxStateToProps)(Feelings);

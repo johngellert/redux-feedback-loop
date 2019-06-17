@@ -9,7 +9,6 @@ class Comments extends Component {
     }
 
     handleClickNext = () => {
-        // this.props.history.push('/comments');
         this.props.dispatch({ type: 'SET_COMMENTS', payload: this.state.comments });
     }
 
@@ -19,7 +18,7 @@ class Comments extends Component {
         })
     }
 
-    
+
 
     render() {
         return (
@@ -27,12 +26,19 @@ class Comments extends Component {
                 <h2>Any comments you would like to leave?</h2>
                 <label>
                     <p className="select-label">Comments</p>
-                    <input onChange={this.handleCommentInput}></input>
-                    <button onClick={this.handleClickNext} className="next-button">Next</button>
+                    <input className="comment-input" onChange={this.handleCommentInput}></input>
+                    {this.props.clickCountReducer < 4 ?
+                        <button onClick={this.handleClickNext} className="next-button">Next</button> :
+                        <button className="next-button-disabled">Next</button>
+                    }
                 </label>
             </>
         );
     }
 }
 
-export default connect()(Comments);
+const mapReduxStateToProps = (reduxState) => ({
+    clickCountReducer: reduxState.clickCountReducer,
+});
+
+export default connect(mapReduxStateToProps)(Comments);

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class Support extends Component {
 
     handleClickSubmit = () => {
-
+        console.log('taco');
     }
 
     render() {
@@ -16,6 +16,10 @@ class Support extends Component {
                     <p>Understanding: {this.props.reduxState.understandingReducer}</p>
                     <p>Support: {this.props.reduxState.supportReducer}</p>
                     <p>Comments: {this.props.reduxState.commentsReducer}</p>
+                    {this.props.reduxState.clickCountReducer < 4 ?
+                        <button className="submit-button-disabled">Submit Feedback!</button> :
+                        <button className="submit-button" onClick={this.handleClickSubmit}>Submit Feedback!</button> 
+                    }
                 </div>
             </div>
         );

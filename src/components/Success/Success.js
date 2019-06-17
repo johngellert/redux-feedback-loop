@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
-
-import Feelings from '../Feelings/Feelings';
+import { connect } from 'react-redux';
 
 class Support extends Component {
 
     // go back to the feelings page and start over
     handleLeaveNewFeedback = () => {
-        this.props.history.push('/');;
+        this.props.history.push('/');
+        
+        this.props.dispatch( {type: 'SUBMIT_FALSE', payload: false });
     }
 
     render() {
-
         return (
 
                 <div>
                     <h2>Submission successful!</h2>
                     <div className="thank-you">
                         Thank you for your feedback!
-                    <button className="start-over-button" onclick={this.handleLeaveNewFeedback}>Leave New Feedback</button>
+                    <button className="start-over-button" onClick={this.handleLeaveNewFeedback}>Leave New Feedback</button>
                     </div>
                 </div>
                 
@@ -26,4 +25,4 @@ class Support extends Component {
     }
 }
 
-export default Support;
+export default connect()(Support);

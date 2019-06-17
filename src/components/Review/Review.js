@@ -7,9 +7,7 @@ class Review extends Component {
 
     // handle the submit click
     handleClickSubmit = () => {
-        // update the submitReducer from false to true
-        // changes the render in FeedbackForm to render the Success page instead of the FeedbackForm
-        // In not a fan of this here, but I was struggling with routing. 
+        this.props.history.push('/success');
         this.props.dispatch({ type: 'SUBMIT', payload: true })
 
         // sends a POST request to the server to hold the feedback instance in the database

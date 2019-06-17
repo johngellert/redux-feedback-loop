@@ -6,8 +6,13 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import '../App/App.css';
 
 import Header from '../Header/Header';
-import FeedbackForm from '../FeedbackForm/FeedbackForm';
+import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support'
+import Comments from '../Comments/Comments';
 import Success from '../Success/Success';
+
+import Review from '../Review/Review';
 
 
 class App extends Component {
@@ -18,19 +23,23 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          {this.props.reduxState.submitReducer ?
+          {/* {this.props.reduxState.submitReducer ?
             <Success /> :
-            <FeedbackForm />}
+            <FeedbackForm />} */}
         </div>
-        {/* <pre>
-          {JSON.stringify(this.props.reduxState.feelingsReducer, 2, null)}
-          {JSON.stringify(this.props.reduxState.supportReducer, 2, null)}
-          {JSON.stringify(this.props.reduxState.understandingReducer, 2, null)}
-          {JSON.stringify(this.props.reduxState.commentsReducer, 2, null)}
-          {JSON.stringify(this.props.reduxState.clickCountReducer, 2, null)}
-        </pre> */}
-      </Router>
+        <div className="question-container">
+          <Route path="/" exact component={Feelings}></Route>
+          <Route path="/understanding" exact component={Understanding}></Route>
+          <Route path="/support" exact component={Support}></Route>
+          <Route path="/comments" exact component={Comments}></Route>
+          <Route path="/success" exact component={Success}></Route>
+          {this.props.reduxState.submitReducer === false ?
+            <Route exact component={Review}></Route> :
+            <></ >
+          }
 
+        </div>
+      </Router>
     );
   }
 }

@@ -71,6 +71,8 @@ const submitReducer = (state = false, action) => {
     switch (action.type) {
         case 'SUBMIT':
             return action.payload;
+        case 'SUBMIT_FALSE':
+            return action.payload;
         default: return state
     }
 }

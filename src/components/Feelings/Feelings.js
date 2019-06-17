@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 
 class Feelings extends Component {
 
+    state = {
+        feelings: '',
+    }
+
     handleClickNext = (event) => {
         this.props.history.push('/understanding');
-        this.props.dispatch({ type: 'SET_FEELINGS', payload: event.target.value });
+        this.props.dispatch({ type: 'SET_FEELINGS', payload: this.state.feelings });
+    }
+
+    handleFeelingsChange = (event) => {
+        this.setState({
+            feelings: event.target.value,
+        })
     }
 
     render() {
@@ -15,7 +25,7 @@ class Feelings extends Component {
                 <h2>How are you feeling today?</h2>
                 <label>
                     <p className="select-label">Feeling?</p>
-                    <select>
+                    <select onChange={this.handleFeelingsChange}>
                         <option value="1">1 - I'm very stressed</option>
                         <option value="2">2 - I'm somewhat stressed</option>
                         <option value="3">3 - I'm neither stressed nor feeling great</option>

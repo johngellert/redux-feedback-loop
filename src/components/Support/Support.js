@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
 
-    handleClickNext = (event) => {
+    state = {
+        support: '',
+    }
+
+    handleClickNext = () => {
         this.props.history.push('/comments');
-        this.props.dispatch({ type: 'SET_SUPPORT', payload: event.target.value });
+        this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support });
+    }
+
+    handleSupportChange = (event) => {
+        this.setState({
+            support: event.target.value,
+        });
     }
 
     render() {
@@ -15,7 +25,7 @@ class Support extends Component {
                 <h2>How well are you being supported?</h2>
                 <label>
                     <p className="select-label">Support?</p>
-                    <select>
+                    <select onChange={this.handleSupportChange}>
                         <option value="1">1 - I'm feeling abandoned</option>
                         <option value="2">2 - I'm somewhat feeling abandoned</option>
                         <option value="3">3 - I'm feeling neither abandoned nor supported</option>

@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
+    state = {
+        understanding: '',
+    }
+
     handleClickNext = (event) => {
         this.props.history.push('/support');
-        this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: event.target.value });
+        this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state.understanding});
+    }
+
+    handleUnderstandingChange = (event) => {
+        this.setState({
+            understanding: event.target.value,
+        })
     }
 
     render() {
@@ -15,7 +25,7 @@ class Understanding extends Component {
                 <h2>How well do you understand the content?</h2>
                 <label>
                     <p className="select-label">Understanding?</p>
-                    <select>
+                    <select onChange={this.handleUnderstandingChange}>
                         <option value="1">1 - I'm totally lost</option>
                         <option value="2">2 - I'm somewhat lost</option>
                         <option value="3">3 - I'm neither lost nor feeling like I've got this</option>

@@ -9,23 +9,60 @@ import { Provider } from 'react-redux';
 
 import logger from 'redux-logger';
 
-const feedbackReducer = (state = [], action) => {
+// const feedbackReducer = (state = [], action) => {
+//     // switch (action.type) {
+//     //     case 'SET_FEELINGS':
+//     //         return [...state, action.payload];
+//     //     case 'SET_UNDERSTANDING':
+//     //         return [...state, action.payload];
+//     //     case 'SET_SUPPORT':
+//     //         return [...state, action.payload];
+//     //     case 'SET_COMMENTS':
+//     //         return [...state, action.payload];
+//     //     default: return state;
+//     // }
+// }
+
+const feelingsReducer = (state = "feelings", action) => {
     switch (action.type) {
         case 'SET_FEELINGS':
-            return [...state, action.payload];
+            return action.payload;
+        default: return state
+    }
+}
+
+
+
+const understandingReducer = (state = "understanding", action) => {
+    switch (action.type) {
         case 'SET_UNDERSTANDING':
-            return [...state, action.payload];
+            return action.payload;
+        default: return state
+    }
+}
+
+const supportReducer = (state = "support", action) => {
+    switch (action.type) {
         case 'SET_SUPPORT':
-            return [...state, action.payload];
+            return action.payload;
+        default: return state
+    }
+}
+
+const commentsReducer = (state = "", action) => {
+    switch (action.type) {
         case 'SET_COMMENTS':
-            return [...state, action.payload];
-        default: return state;
+            return action.payload;
+        default: return state
     }
 }
 
 const storeInstance = createStore(
     combineReducers({
-        feedbackReducer,
+        feelingsReducer,
+        supportReducer,
+        understandingReducer,
+        commentsReducer,
     }),
     applyMiddleware(logger),
 )

@@ -32,12 +32,12 @@ class Feelings extends Component {
                 <label>
                     <p className="select-label">Feeling?</p>
                     <select className="select" onChange={this.handleFeelingsChange}>
-                        <option value="0">Select</option>
-                        <option value="1">1 - I'm very stressed</option>
-                        <option value="2">2 - I'm somewhat stressed</option>
-                        <option value="3">3 - I'm neither stressed nor feeling great</option>
-                        <option value="4">4 - I'm somewhat feeling great</option>
-                        <option value="5">5 - I'm feeling great</option>
+                        <option value={0}>Select</option>
+                        <option value={1}>1 - I'm very stressed</option>
+                        <option value={2}>2 - I'm somewhat stressed</option>
+                        <option value={3}>3 - I'm neither stressed nor feeling great</option>
+                        <option value={4}>4 - I'm somewhat feeling great</option>
+                        <option value={5}>5 - I'm feeling great</option>
                     </select>
                     <button onClick={this.handleClickNext} className="next-button">Next</button>
                 </label>

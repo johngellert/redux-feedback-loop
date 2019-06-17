@@ -22,13 +22,13 @@ class App extends Component {
             <Success /> :
             <FeedbackForm />}
         </div>
-        <pre>
+        {/* <pre>
           {JSON.stringify(this.props.reduxState.feelingsReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.supportReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.understandingReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.commentsReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.clickCountReducer, 2, null)}
-        </pre>
+        </pre> */}
          <Route path="/success" exact component={Success}></Route>
       </Router>
 

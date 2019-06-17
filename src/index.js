@@ -19,11 +19,13 @@ const clickCountReducer = (state = 0, action) => {
             return state + 1;
         case 'SET_COMMENTS':
             return state + 1;
+        case 'RESET_COUNT':
+            return action.payload;
         default: return state;
     }
 }
 
-const feelingsReducer = (state = "", action) => {
+const feelingsReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_FEELINGS':
             return action.payload;
@@ -31,7 +33,7 @@ const feelingsReducer = (state = "", action) => {
     }
 }
 
-const understandingReducer = (state = "", action) => {
+const understandingReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_UNDERSTANDING':
             return action.payload;
@@ -39,7 +41,7 @@ const understandingReducer = (state = "", action) => {
     }
 }
 
-const supportReducer = (state = "", action) => {
+const supportReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_SUPPORT':
             return action.payload;
@@ -70,7 +72,7 @@ const storeInstance = createStore(
         understandingReducer,
         commentsReducer,
         clickCountReducer,
-        submitReducer
+        submitReducer,
     }),
     applyMiddleware(logger),
 )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
+// declare understanding component which display on the feedback form
 class Understanding extends Component {
 
     state = {
@@ -22,6 +22,7 @@ class Understanding extends Component {
         }
     }
 
+    // update local state as the user makes a selection
     handleUnderstandingChange = (event) => {
         this.setState({
             understanding: event.target.value,

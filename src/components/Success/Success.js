@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 import Feelings from '../Feelings/Feelings';
 
 class Support extends Component {
 
+    // go back to the feelings page and start over
     handleLeaveNewFeedback = () => {
         this.props.history.push('/');;
     }

@@ -22,6 +22,7 @@ class Support extends Component {
 
     }
 
+    // updates local state when the user makes a selection
     handleSupportChange = (event) => {
         this.setState({
             support: event.target.value,

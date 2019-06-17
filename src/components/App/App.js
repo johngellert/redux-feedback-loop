@@ -24,6 +24,7 @@ class App extends Component {
           {JSON.stringify(this.props.reduxState.supportReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.understandingReducer, 2, null)}
           {JSON.stringify(this.props.reduxState.commentsReducer, 2, null)}
+          {JSON.stringify(this.props.reduxState.clickCountReducer, 2, null)}
         </pre>
       </Router>
 

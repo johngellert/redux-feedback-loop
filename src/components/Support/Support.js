@@ -9,14 +9,21 @@ class Support extends Component {
     }
 
     handleClickNext = () => {
-        this.props.history.push('/comments');
-        this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support });
+        if(this.state.support === ''){
+            alert("Please select how you're being supported!");
+        }
+        else {
+            this.props.history.push('/comments');
+            this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support });
+        }
+        
     }
 
     handleSupportChange = (event) => {
         this.setState({
             support: event.target.value,
         });
+        event.preventDefault();
     }
 
     render() {

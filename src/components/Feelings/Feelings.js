@@ -8,15 +8,21 @@ class Feelings extends Component {
         feelings: '',
     }
 
-    handleClickNext = (event) => {
-        this.props.history.push('/understanding');
-        this.props.dispatch({ type: 'SET_FEELINGS', payload: this.state.feelings });
+    handleClickNext = () => {
+        if(this.state.feelings === ''){
+            alert("Please select how you are feeling!");
+        }
+        else {
+            this.props.history.push('/understanding');
+            this.props.dispatch({ type: 'SET_FEELINGS', payload: this.state.feelings });
+        }
     }
 
     handleFeelingsChange = (event) => {
         this.setState({
             feelings: event.target.value,
         })
+        event.preventDefault();
     }
 
     render() {
@@ -39,4 +45,8 @@ class Feelings extends Component {
     }
 }
 
-export default connect()(Feelings);
+const mapReduxStateToProps = (reduxState) => ({
+    feelingsReducer: reduxState.feelingsReducer,
+  })
+
+export default connect(mapReduxStateToProps)(Feelings);

@@ -9,21 +9,21 @@ import { Provider } from 'react-redux';
 
 import logger from 'redux-logger';
 
-// const feedbackReducer = (state = [], action) => {
-//     // switch (action.type) {
-//     //     case 'SET_FEELINGS':
-//     //         return [...state, action.payload];
-//     //     case 'SET_UNDERSTANDING':
-//     //         return [...state, action.payload];
-//     //     case 'SET_SUPPORT':
-//     //         return [...state, action.payload];
-//     //     case 'SET_COMMENTS':
-//     //         return [...state, action.payload];
-//     //     default: return state;
-//     // }
-// }
+const clickCountReducer = (state = 0, action) => {
+    switch (action.type) {
+        case 'SET_FEELINGS':
+            return state + 1;
+        case 'SET_UNDERSTANDING':
+            return state + 1;
+        case 'SET_SUPPORT':
+            return state + 1;
+        case 'SET_COMMENTS':
+            return state + 1;
+        default: return state;
+    }
+}
 
-const feelingsReducer = (state = "feelings", action) => {
+const feelingsReducer = (state = "", action) => {
     switch (action.type) {
         case 'SET_FEELINGS':
             return action.payload;
@@ -31,9 +31,7 @@ const feelingsReducer = (state = "feelings", action) => {
     }
 }
 
-
-
-const understandingReducer = (state = "understanding", action) => {
+const understandingReducer = (state = "", action) => {
     switch (action.type) {
         case 'SET_UNDERSTANDING':
             return action.payload;
@@ -41,7 +39,7 @@ const understandingReducer = (state = "understanding", action) => {
     }
 }
 
-const supportReducer = (state = "support", action) => {
+const supportReducer = (state = "", action) => {
     switch (action.type) {
         case 'SET_SUPPORT':
             return action.payload;
@@ -63,6 +61,7 @@ const storeInstance = createStore(
         supportReducer,
         understandingReducer,
         commentsReducer,
+        clickCountReducer,
     }),
     applyMiddleware(logger),
 )

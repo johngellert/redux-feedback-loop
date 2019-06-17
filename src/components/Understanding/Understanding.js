@@ -9,14 +9,21 @@ class Understanding extends Component {
     }
 
     handleClickNext = (event) => {
-        this.props.history.push('/support');
-        this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state.understanding});
+        
+        if(this.state.understanding === ''){
+            alert("Please select your understanding!");
+        }
+        else {
+            this.props.history.push('/support');
+            this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state.understanding});
+        }
     }
 
     handleUnderstandingChange = (event) => {
         this.setState({
             understanding: event.target.value,
         })
+        event.preventDefault();
     }
 
     render() {
